@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Info() {
+export default function Admin() {
     return (
         <div>
-            info
+            admin
         </div>
     )
 }

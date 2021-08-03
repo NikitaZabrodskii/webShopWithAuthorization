@@ -1,18 +1,16 @@
+import { Provider } from 'react-redux';
+import AppRouter from './components/AppRouter';
 
-import {BrowserRouter} from 'react-router-dom'
-import AppRouter from './components/AppRouter'
-import Button from './components/Button'
-
-
-
+import { store } from './store';
 
 function App() {
-  return (
-    <BrowserRouter className="App">
-      <AppRouter/>
-      <Button/>
-    </BrowserRouter>
-  );
+	console.log(store);
+	return (
+		<Provider store={store}>
+			<AppRouter />
+
+		</Provider>
+	);
 }
 
 export default App;

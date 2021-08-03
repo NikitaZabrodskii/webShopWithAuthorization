@@ -1,18 +1,14 @@
 
-import React, {createContext} from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import App from './App';
-import userStore from "./store/userStore";
 
 
-export const Context = createContext(null)
+
 
 ReactDOM.render(
-    <Context.Provider value={{
-        user: new userStore(),
-        
-    }}>
+    <BrowserRouter>
         <App />
-    </Context.Provider>,
+    </BrowserRouter>,
   document.getElementById('root')
 );

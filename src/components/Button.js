@@ -1,31 +1,28 @@
 import React from 'react';
-import { useDispatch , useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { userActions } from '../store/userStore';
 
 function Button() {
 	const dispatch = useDispatch();
+	const { isAuth } = useSelector((state) => state.user);
 
-
-
-    const handlerAuth = (event) =>{
-        dispatch(userActions.setUser(event.target.value))
-    }
-    
-
-
+	const handlerAuth = (event) => {
+		
+		
+		dispatch(userActions.setUser(!isAuth))
+	};
 
 	return (
 		<form action='#'>
 			<p>
 				<label>
-					<button name='group1' type='radio'  value = {true}  onClick = {handlerAuth} />
-					<span>on Auth</span>
-				</label>
-			</p>
-			<p>
-				<label>
-					<button name='group1' type='radio' value ={false}  onClick = {handlerAuth}/>
-					<span>off Auth</span>
+					<input
+						name='group1'
+						type='checkbox'
+						checked={isAuth}
+						onChange={handlerAuth}
+					/>
+					<span>set Auth</span>
 				</label>
 			</p>
 		</form>

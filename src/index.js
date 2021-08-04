@@ -1,5 +1,5 @@
 
-import { BrowserRouter } from 'react-router-dom';
+
 import ReactDOM from 'react-dom';
 import App from './App';
 
@@ -7,8 +7,8 @@ import App from './App';
 
 
 ReactDOM.render(
-    <BrowserRouter>
+    <div>
         <App />
-    </BrowserRouter>,
+    </div>,
   document.getElementById('root')
 );

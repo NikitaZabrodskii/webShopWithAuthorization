@@ -21,7 +21,7 @@ function AppRouter() {
 			<Redirect to={SHOP_ROUTE} />
 
 		</Switch>
-        <Button/>
+       
         </div>
 	);
 }

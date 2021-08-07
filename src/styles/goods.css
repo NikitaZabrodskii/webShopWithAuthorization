@@ -1,0 +1,8 @@
+.goods{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(20rem, 1fr));
+    
+}
+.container{
+    width: 120rem;
+}

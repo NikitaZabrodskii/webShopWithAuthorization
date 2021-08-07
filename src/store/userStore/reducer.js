@@ -1,7 +1,7 @@
 import { userActionsType } from './actions';
 
 const initialState = {
-	isAuth: true,
+	isAuth: false,
 };
 
 export const userReducer = (state = initialState, action) => {

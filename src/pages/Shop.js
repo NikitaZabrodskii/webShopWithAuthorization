@@ -4,8 +4,34 @@ import Goods from './shopComp/Goods';
 export default function Shop() {
     const [goods, setGoods] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [order, setOrder] = useState([])
 
 
+
+    const addToBasket = (item) =>{
+        const itemId = order.findIndex((orderItem) => orderItem.id === item.id)
+
+        if(itemId <0){
+            const newItem = {
+                ...item,
+                quantity: 1
+            }
+            setOrder([...order, newItem])
+        } else{
+            const oldItem  = order.map((orderItem ,orderIndex) =>{
+                if(itemId === orderIndex){
+                    return {
+                        ...orderItem,
+                        quantity:order.quntity +1
+                    }
+                }else{
+                    return orderItem
+                }
+            })
+            setOrder([...order,oldItem])
+        }
+
+    }
 
     useEffect(() => {
         fetch('https://fortniteapi.io/v1/shop?lang=en&=', {
@@ -22,7 +48,7 @@ export default function Shop() {
 	return (
      
 		<div>
-			<Goods goods = {goods}/>
+			<Goods goods = {goods} addToBasket ={addToBasket}/>
 		</div>
 	);
 }

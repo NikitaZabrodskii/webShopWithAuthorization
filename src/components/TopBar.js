@@ -49,7 +49,7 @@ export default function TopBar() {
 							Admin
 						</Button>
 						<Button  className='menu'>
-							Basket
+							<NavLink to={BASKET_ROUTE}>Basket</NavLink>
 						</Button>
 						<Button  className='menu'>
 							Log out

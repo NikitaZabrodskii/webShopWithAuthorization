@@ -1,8 +1,10 @@
 import React from 'react';
-import { Card, ListGroup, ListGroupItem } from 'react-bootstrap';
-import '../../styles/goods.css'
+
+import '../../styles/goods.css';
 export default function Good(props) {
-	const { id, name, description, price, full_background } = props;
+	const { id, name, description, price, full_background, addToBasket = Function.proptotype } = props;
+
+
 	return (
 		<div className='card'>
 			<div className='card-image'>
@@ -13,12 +15,7 @@ export default function Good(props) {
 				<p>{description}</p>
 			</div>
 			<div className='card-action'>
-				{/* <button
-					className='btn'
-					onClick={() => addToBusket({ id, name, price })}
-				>
-					Купить
-				</button> */}
+				<button className='btn' onClick = {() => addToBasket({id,name,price})}>Купить</button>
 				<span className='right' style={{ fontSize: '1.8rem' }}>
 					{price} руб.
 				</span>

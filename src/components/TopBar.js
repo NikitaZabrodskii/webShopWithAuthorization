@@ -59,7 +59,7 @@ export default function TopBar() {
 					<Nav className='ml-auto menu'>
 						<Button >
 							
-							Login
+							<NavLink to ={LOGIN_ROUTE}>Login</NavLink>
 						</Button>
 					</Nav>
 				)}
